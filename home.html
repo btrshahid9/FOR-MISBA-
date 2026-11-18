@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Princess Day</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="sparkles"></canvas>
+
+<header class="hero">
+  <div class="crown" aria-hidden="true">
+    <svg viewBox="0 0 200 120" width="150">
+      <path d="M20 100 L10 35 L55 65 L100 15 L145 65 L190 35 L180 100 Z" fill="#fde68a" stroke="#222" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="18" y="100" width="164" height="14" rx="7" fill="#fb7185" stroke="#222" stroke-width="3"/>
+      <circle cx="10" cy="33" r="8" fill="#c4b5fd" stroke="#222" stroke-width="3"/>
+      <circle cx="100" cy="13" r="8" fill="#f43f5e" stroke="#222" stroke-width="3"/>
+      <circle cx="190" cy="33" r="8" fill="#c4b5fd" stroke="#222" stroke-width="3"/>
+    </svg>
+  </div>
+  <h1>princess</h1>
+  <h2>DAY</h2>
+  <p class="date" id="today"></p>
+  <button id="magic">Tap for magic ✨</button>
+</header>
+
+<section class="photo-section">
+  <div class="frame">
+    <img src="photo.jpg" alt="Princess" id="photo">
+  </div>
+  <h3 id="name">Our Princess MISBA 👑</h3>
+  <p id="msg">Aaj ka din tumhara hai.</p>
+</section>
+
+<section class="cards">
+  <div class="card">💖<p>Sabse pyari</p></div>
+  <div class="card">🌸<p>Sabse special</p></div>
+  <div class="card">🦋<p>Sabse alag</p></div>
+</section>
+
+<section class="wish">
+  <h3>Ek wish chuno</h3>
+  <div id="wishbox">Neeche button dabao 💌</div>
+  <button id="wishbtn">New wish</button>
+</section>
+
+<footer>Happy Princess Day 👑</footer>
+<script src="script.js"></script>
+</body>
+</html>

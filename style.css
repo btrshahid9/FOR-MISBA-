@@ -1,0 +1,81 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Georgia,"Times New Roman",serif;
+  background:radial-gradient(circle at 50% 18%,#ec6f9a 0%,#f6a9c4 35%,#fde4ee 75%);
+  background-attachment:fixed;
+  color:#fff;text-align:center;overflow-x:hidden;min-height:100vh;
+}
+#sparkles{position:fixed;inset:0;pointer-events:none;z-index:5}
+.hero{padding:14px 16px 0}
+.crown svg{width:80px;filter:drop-shadow(0 4px 6px rgba(0,0,0,.15));animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+h1{font-size:clamp(2.2rem,11vw,3.4rem);font-weight:900;letter-spacing:-2px;line-height:1}
+h2{font-size:clamp(1.6rem,8vw,2.4rem);font-weight:400;letter-spacing:6px;margin-top:0}
+.date{margin:4px 0 10px;font-size:.9rem;opacity:.9}
+button{
+  border:none;background:#fff;color:#d6336c;font:700 1rem Georgia,serif;
+  padding:12px 26px;border-radius:30px;box-shadow:0 6px 14px rgba(214,51,108,.3);cursor:pointer
+}
+button:active{transform:scale(.95)}
+.photo-section{padding:6px 16px 20px}
+.frame{
+  position:relative;width:230px;height:230px;margin:0 auto 14px;
+  border-radius:50%;background:conic-gradient(#fde68a,#fb7185,#c4b5fd,#fde68a);
+}
+.frame img{
+  position:absolute;top:6px;left:6px;width:218px;height:218px;
+  object-fit:cover;object-position:center 30%;
+  border-radius:50%;border:4px solid #fff;box-sizing:border-box;
+}
+#name{font-size:1.7rem;color:#c2255c}
+#msg{margin-top:6px;color:#c2255c}
+.cards{display:flex;gap:10px;justify-content:center;padding:10px 12px;flex-wrap:wrap}
+.card{
+  background:rgba(255,255,255,.35);border:2px solid #fff;border-radius:22px;
+  padding:16px 14px;min-width:100px;font-size:2rem;transition:transform .3s
+}
+.card p{font-size:.95rem;margin-top:4px;color:#c2255c}
+.card:active{transform:rotate(-4deg) scale(1.05)}
+.wish{padding:30px 16px}
+.wish h3{color:#c2255c}
+#wishbox{
+  max-width:340px;margin:14px auto 16px;background:#fff;color:#c2255c;
+  border-radius:20px;padding:22px 16px;font-size:1.1rem;min-height:80px;
+  display:flex;align-items:center;justify-content:center
+}
+footer{padding:30px 10px 50px;color:#c2255c;font-weight:700}
+.next{
+ .next{
+  display:inline-block;background:#fff;color:#d6336c;font-weight:700;
+  padding:12px 26px;border-radius:30px;text-decoration:none;
+  box-shadow:0 6px 14px rgba(214,51,108,.3);margin:20px 0
+}
+.letter{max-width:340px;margin:0 auto;padding:60px 16px;color:#c2255c;font-size:1.15rem;line-height:1.7}
+.letter h3{font-size:1.8rem;margin-bottom:16px}
+.letter p{margin-bottom:14px}
+
+/* Page leave fade */
+body.leaving{opacity:0;transform:translateY(-30px);transition:opacity .5s ease,transform .5s ease}
+
+/* Text fade up */
+@keyframes textUp{
+  from{opacity:0;transform:translateY(25px)}
+  to{opacity:1;transform:translateY(0)}
+}
+h1,h2,.date,#magic,#name,#msg,.card,.wish h3,#wishbox,#wishbtn,
+.letter h3,.letter p,.next,footer{
+  animation:textUp .8s ease both;
+}
+h1{animation-delay:.1s}
+h2{animation-delay:.3s}
+.date{animation-delay:.5s}
+#magic{animation-delay:.7s}
+#name{animation-delay:.9s}
+#msg{animation-delay:1.1s}
+.card:nth-child(1){animation-delay:1.3s}
+.card:nth-child(2){animation-delay:1.5s}
+.card:nth-child(3){animation-delay:1.7s}
+.letter h3{animation-delay:.2s}
+.letter p:nth-of-type(1){animation-delay:.6s}
+.letter p:nth-of-type(2){animation-delay:1s}
+.letter .next{animation-delay:1.4s}

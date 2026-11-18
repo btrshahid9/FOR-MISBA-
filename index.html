@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Surprise 💌</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Georgia,serif;color:#fff;text-align:center;overflow:hidden;
+  min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 50% 30%,#ec6f9a,#f6a9c4 50%,#fde4ee);
+}
+.heart{position:fixed;bottom:-40px;animation:rise linear forwards;pointer-events:none}
+@keyframes rise{to{transform:translateY(-115vh) rotate(40deg);opacity:0}}
+#typed{font-size:1.6rem;min-height:5.5rem;padding:0 22px;line-height:1.5;text-shadow:0 2px 8px rgba(194,37,92,.35)}
+#env{
+  margin-top:30px;font-size:6rem;cursor:pointer;opacity:0;
+  transition:opacity 1s,transform .4s;animation:beat 1.2s infinite;
+}
+#env.show{opacity:1}
+#env.open{transform:scale(1.6) rotate(8deg);animation:none}
+@keyframes beat{50%{transform:scale(1.15)}}
+#hint{margin-top:10px;font-size:1rem;opacity:0;transition:opacity 1s;color:#c2255c;font-weight:700}
+#hint.show{opacity:1}
+#fade{position:fixed;inset:0;background:#fff;opacity:0;pointer-events:none;transition:opacity .8s}
+#fade.on{opacity:1}
+.line{opacity:0;animation:textUp .9s ease forwards}
+@keyframes textUp{
+  from{opacity:0;transform:translateY(25px)}
+  to{opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+<body>
+
+<div id="typed"></div>
+<div id="env">💌</div>
+<div id="hint">Ise tap karo</div>
+<div id="fade"></div>
+
+<script>
+// Yahan apna message badlo
+const text = "Hey MISBAH 👑\nAaj ka din sirf tumhare liye hai...\nEk chhota sa surprise hai 💖";
+
+// Floating hearts
+const icons = ["💖","💗","🌸","✨","🦋","💕"];
+setInterval(() => {
+  const h = document.createElement("div");
+  h.className = "heart";
+  h.textContent = icons[Math.floor(Math.random()*icons.length)];
+  h.style.left = Math.random()*100 + "vw";
+  h.style.fontSize = (16 + Math.random()*22) + "px";
+  h.style.animationDuration = (5 + Math.random()*5) + "s";
+  document.body.appendChild(h);
+  setTimeout(() => h.remove(), 10000);
+}, 350);
+
+// Text fade up (line by line)
+const box = document.getElementById("typed");
+const lines = text.split("\n");
+lines.forEach((line, n) => {
+  const d = document.createElement("div");
+  d.className = "line";
+  d.textContent = line;
+  d.style.animationDelay = (0.6 + n * 1.2) + "s";
+  box.appendChild(d);
+});
+setTimeout(() => {
+  document.getElementById("env").classList.add("show");
+  document.getElementById("hint").classList.add("show");
+}, (0.6 + lines.length * 1.2) * 1000);
+
+// Lifafa tap -> main page
+document.getElementById("env").addEventListener("click", function(){
+  this.classList.add("open");
+  this.textContent = "💖";
+  document.getElementById("fade").classList.add("on");
+  setTimeout(() => location.href = "home.html", 900);
+});
+</script>
+</body>
+</html>
